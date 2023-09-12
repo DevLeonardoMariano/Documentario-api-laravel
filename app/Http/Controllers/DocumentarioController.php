@@ -63,6 +63,8 @@ class DocumentarioController extends Controller
      */
     public function destroy(Documentario $documentario)
     {
-        //
+        $documentario->delete();
+
+        return $documentario;
     }
 }
