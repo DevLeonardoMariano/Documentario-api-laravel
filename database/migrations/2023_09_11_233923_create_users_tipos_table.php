@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documentarios', function (Blueprint $table) {
+        Schema::create('users_tipos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('titulo',30);
-            $table->string('autor',30);
-            $table->string('imagem');
-            $table->longText('resumo');
+            $table->string('papel',50);
             $table->boolean('ativo')->default(1);
+
         });
     }
 
@@ -27,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documentarios');
+        Schema::dropIfExists('users_tipos');
     }
 };

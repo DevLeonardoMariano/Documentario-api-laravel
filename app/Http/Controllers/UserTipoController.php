@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Documentario;
-use App\Http\Requests\StoreDocumentarioRequest;
-use App\Http\Requests\UpdateDocumentarioRequest;
+use App\Models\UserTipo;
+use App\Http\Requests\StoreUserTipoRequest;
+use App\Http\Requests\UpdateUserTipoRequest;
 
-class DocumentarioController extends Controller
+class UserTipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,45 +14,44 @@ class DocumentarioController extends Controller
     public function index()
     {
         try {
-
-            $obj = new Documentario();
-            $documentario = $obj->all();
+            $obj = new userTipo();
+            $userTipo = $obj->all();
 
             return [
                 'status' => 1,
-                'data' => $documentario
+                'data' => $userTipo
             ];
 
-        } catch (Exception $e) {
-            
+        } catch (Exception $e){
+
             return [
                 "status" => 0,
                 "error" => $e->getMessage(),
             ];
-        };
+        }
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    // public function create()
-    // {
-    //     //
-    // }
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDocumentarioRequest $request)
+    public function store(StoreUserTipoRequest $request)
     {
         try {
             
-            $obj = new Documentario();
-            $documentario = $obj->create($request->all());
+            $obj = new userTipo();
+            $userTipo = $obj->create($request->all());
 
             return [
                 'status' => 1,
-                'data' => $documentario
+                'data' => $userTipo
             ];
 
         } catch (Exception $e){
@@ -68,13 +67,13 @@ class DocumentarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Documentario $documentario)
+    public function show(UserTipo $userTipo)
     {
         try {
 
             return [
-                'status' => 1,
-                'data' => $documentario
+                "status" => 1,
+                "data" => $userTipo
             ];
 
         } catch (Exception $e){
@@ -87,19 +86,25 @@ class DocumentarioController extends Controller
         }
     }
 
-  
+    /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit(UserTipo $userTipo)
+    {
+        //
+    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDocumentarioRequest $request, Documentario $documentario)
+    public function update(UpdateUserTipoRequest $request, UserTipo $userTipo)
     {
         try {
-            $documentario->update($request->all());
+            $userTipo->update($request->all());
 
             return [
                 "status" => 1,
-                "data" => $documentario
+                "data" => $userTipo
             ];
 
         } catch (Exception $e){
@@ -115,15 +120,15 @@ class DocumentarioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Documentario $documentario)
+    public function destroy(UserTipo $userTipo)
     {
         try {
 
-            $documentario->delete();
+            $userTipo->delete();
 
             return [
                 "status" => 1,
-                "data" => $documentario
+                "data" => $userTipo
             ];
 
         } catch (Exception $e){

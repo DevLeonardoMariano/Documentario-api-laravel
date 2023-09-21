@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocumentarioController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserTipoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\UserController;
 Route::resources([
     'documentario' => DocumentarioController::class,
     'usuario' => UserController::class,
+    'tipoDeUsuario' => UserTipoController::class,
 ]);
 
 Route::post('logar', [
