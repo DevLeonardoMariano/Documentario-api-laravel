@@ -16,17 +16,23 @@ use App\Http\Controllers\UserTipoController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::resources([
-    'documentario' => DocumentarioController::class,
-    'usuario' => UserController::class,
-    'tipoDeUsuario' => UserTipoController::class,
-]);
 
-Route::post('logar', [
-
-    UserController::class, 'login'
-]);
+Route::post('logout', [UserController::class, 'logout']);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
+
+Route::post("login", [UserController::class, 'login']);
+
+Route::resources([
+    'documentarios' => DocumentarioController::class,
+    'users' => UserController::class,
+    'tipoDeUsuarios' => UserTipoController::class,
+]);
+
+Route::middleware("auth:api")->group(function() {
+
+    Route::post('logout', [UserController::class, 'logout']);
+    
+});

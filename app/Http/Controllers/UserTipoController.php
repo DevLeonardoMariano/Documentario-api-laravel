@@ -10,11 +10,13 @@ class UserTipoController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         try {
-            $obj = new userTipo();
+            $obj = new UserTipo();
             $userTipo = $obj->all();
 
             return [
@@ -33,6 +35,8 @@ class UserTipoController extends Controller
 
     /**
      * Show the form for creating a new resource.
+     * 
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -41,12 +45,15 @@ class UserTipoController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * 
+     * @param  \App\Http\Requests\StoreUserTipoRequest  $request
+     * @return \Illuminate\Http\Response
      */
     public function store(StoreUserTipoRequest $request)
     {
         try {
             
-            $obj = new userTipo();
+            $obj = new UserTipo();
             $userTipo = $obj->create($request->all());
 
             return [
@@ -66,6 +73,9 @@ class UserTipoController extends Controller
 
     /**
      * Display the specified resource.
+     * 
+     * @param  \App\Models\UserTipo  $userTipo
+     * @return \Illuminate\Http\Response
      */
     public function show(UserTipo $userTipo)
     {
@@ -88,6 +98,9 @@ class UserTipoController extends Controller
 
     /**
      * Show the form for editing the specified resource.
+     * 
+     * @param  \App\Models\UserTipo  $userTipo
+     * @return \Illuminate\Http\Response
      */
     public function edit(UserTipo $userTipo)
     {
@@ -96,6 +109,10 @@ class UserTipoController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * 
+     * @param  \App\Http\Requests\UpdateUserTipoRequest  $request
+     * @param  \App\Models\UserTipo  $userTipo
+     * @return \Illuminate\Http\Response
      */
     public function update(UpdateUserTipoRequest $request, UserTipo $userTipo)
     {
@@ -119,6 +136,9 @@ class UserTipoController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * 
+     * @param  \App\Models\UserTipo  $userTipo
+     * @return \Illuminate\Http\Response
      */
     public function destroy(UserTipo $userTipo)
     {

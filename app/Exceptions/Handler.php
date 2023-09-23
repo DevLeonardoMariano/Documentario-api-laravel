@@ -7,6 +7,15 @@ use Throwable;
 
 class Handler extends ExceptionHandler
 {
+
+    /**
+     * A list of the exception types that are not reported.
+     *
+     * @var array<int, class-string<Throwable>>
+     */
+    protected $dontReport = [
+        //
+    ];
     /**
      * The list of the inputs that are never flashed to the session on validation exceptions.
      *
@@ -18,8 +27,10 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
-    /**
+   /**
      * Register the exception handling callbacks for the application.
+     *
+     * @return void
      */
     public function register(): void
     {
