@@ -189,8 +189,8 @@ class UserController extends Controller
 
             return response()->json([
                 "status" => true,
-                "token" => $token
-            
+                "token" => $token,
+                "escopo" => auth()->user()->user_tipo->description
             ], 200);
 
         } else {
@@ -216,7 +216,7 @@ class UserController extends Controller
         } else {
             return response()->json([
                 'status' => false,
-                'error' => 'Logout error. Maybe your token was already revoked. Please try again if thats not the case.'
+                'error' => 'Erro de logout. Talvez o seu token já tenha sido revogado. Por favor, tente novamente se não for o caso.'
             ], 500);
         }
     }

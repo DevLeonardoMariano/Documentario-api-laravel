@@ -54,8 +54,17 @@ class DocumentarioController extends Controller
     {
         try {
             
-            $obj = new Documentario();
-            $documentario = $obj->create($request->all());
+            $file = $request->file('imagem');
+            $imageName = time().'.'.$file->extension();
+            $imagePath = public_path(). '/images';
+            $file->move($imagePath, $imageName);
+
+            $data = $request->all();
+
+            $documentario = new Documentario(["titulo" => $data["titulo"],  "autor" => $data["autor"], 
+            "resumo" => $data["resumo"], "imagem" => $imageName]);
+
+            $documentario->save();
 
             return [
                 'status' => 1,
