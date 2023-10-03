@@ -190,7 +190,7 @@ class UserController extends Controller
             return response()->json([
                 "status" => true,
                 "token" => $token,
-                "escopo" => auth()->user()->user_tipo->description
+                
             ], 200);
 
         } else {
