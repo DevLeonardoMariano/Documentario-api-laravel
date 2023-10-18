@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AvaliacaoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocumentarioController;
@@ -29,7 +30,10 @@ Route::resources([
     'documentarios' => DocumentarioController::class,
     'users' => UserController::class,
     'tipoDeUsuarios' => UserTipoController::class,
+    
 ]);
+
+Route::post('avaliacao/{documentario}',[AvaliacaoController::class, 'store']);
 
 Route::middleware("auth:api")->group(function() {
 
