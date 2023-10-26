@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('user_tipos_id')->constrained('users_tipos');
             $table->string('nome',100);
-            $table->date('dataNascimento');
             $table->string('cpf',50);
             $table->string('email',100)->unique();
             $table->timestamp('email_verified_at')->nullable();
