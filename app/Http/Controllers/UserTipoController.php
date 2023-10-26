@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\UserTipo;
 use App\Http\Requests\StoreUserTipoRequest;
 use App\Http\Requests\UpdateUserTipoRequest;
+use Exception;
 
 class UserTipoController extends Controller
 {

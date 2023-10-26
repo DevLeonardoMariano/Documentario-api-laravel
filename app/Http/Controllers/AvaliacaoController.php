@@ -6,6 +6,7 @@ use App\Models\Avaliacao;
 use App\Http\Requests\StoreAvaliacaoRequest;
 use App\Http\Requests\UpdateAvaliacaoRequest;
 use App\Models\Documentario;
+use Exception;
 
 class AvaliacaoController extends Controller
 {

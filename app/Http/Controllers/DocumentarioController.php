@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Documentario;
 use App\Http\Requests\StoreDocumentarioRequest;
 use App\Http\Requests\UpdateDocumentarioRequest;
+use Exception;
 
 class DocumentarioController extends Controller
 {
