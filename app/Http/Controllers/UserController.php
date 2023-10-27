@@ -190,7 +190,7 @@ class UserController extends Controller
             return response()->json([
                 "status" => true,
                 "token" => $token,
-                
+                "usuario" => $usuario,
             ], 200);
 
         } else {
