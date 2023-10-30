@@ -156,7 +156,7 @@ class DocumentarioController extends Controller
         } catch (Exception $e){
 
             return [
-                "status" => 1,
+                "status" => 0,
                 "error" => $e->getMessage()
             ];
 
