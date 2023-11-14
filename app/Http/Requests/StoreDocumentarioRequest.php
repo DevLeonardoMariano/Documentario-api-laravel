@@ -22,7 +22,18 @@ class StoreDocumentarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titulo' => 'required',
+            'autor' => 'required',
+            'resumo' => 'required'
         ];
+    }
+
+    public function messages(): array {
+        return [
+            "titulo.required" => "O campo de titulo é obrigatório.",
+            "autor.required" => "O campo de autor é obrigatório.",
+            "resumo.required" => "O campo de resumo é obrigatório."
+        ];
+
     }
 }
