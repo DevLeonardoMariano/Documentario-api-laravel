@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('titulo',30);
             $table->string('autor',30);
-            $table->string('imagem');
+            // $table->string('imagem');
             $table->longText('resumo');
             $table->boolean('ativo')->default(1);
         });
